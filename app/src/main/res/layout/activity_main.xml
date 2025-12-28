@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/headerSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_gradient_main"
+        android:orientation="vertical"
+        android:paddingTop="32dp"
+        android:paddingBottom="24dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:gravity="center">
+
+        <!-- Lock Icon - Larger -->
+        <TextView
+            android:id="@+id/tvLockIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔐"
+            android:textSize="72sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:shadowColor="#40000000"
+            android:shadowDx="0"
+            android:shadowDy="4"
+            android:shadowRadius="8" />
+
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/tvAppTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_white"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.02" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full-Screen Security System"
+            android:textSize="13sp"
+            android:textColor="@color/text_white_secondary"
+            android:layout_marginTop="6dp"
+            android:fontFamily="sans-serif"
+            android:alpha="0.95" />
+
+        <!-- Status Badge -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/overlay_inactive"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/status_inactive"
+            android:layout_marginTop="16dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:background="@drawable/bg_status_inactive"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.05" />
+
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@android:color/white">
+
+            <!-- Control Section -->
+            <LinearLayout
+                android:id="@+id/controlSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/white"
+                android:padding="16dp">
+
+                <!-- Controls Title -->
+                <TextView
+                    android:id="@+id/tvControlsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overlay Controls"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="sans-serif-black" />
+
+                <!-- Activate Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnActivate"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/activate_overlay"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_white"
+                    android:background="@drawable/bg_button_primary"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_lock_lock"
+                    app:iconGravity="start"
+                    app:iconSize="24dp"
+                    app:iconTint="@color/white"
+                    android:elevation="2dp"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.02" />
+
+                <!-- Deactivate Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDeactivate"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/deactivate_overlay"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_white"
+                    android:background="@drawable/bg_button_danger"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_lock_idle_lock"
+                    app:iconGravity="start"
+                    app:iconSize="24dp"
+                    app:iconTint="@color/white"
+                    android:layout_marginTop="12dp"
+                    android:elevation="2dp"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.02" />
+
+            </LinearLayout>
+
+            <!-- Advanced Features Section -->
+            <LinearLayout
+                android:id="@+id/advancedSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/white"
+                android:padding="16dp">
+
+                <!-- Advanced Title -->
+                <TextView
+                    android:id="@+id/tvBonusFeaturesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Advanced Features"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="sans-serif-black" />
+
+                <!-- Auto-Dismiss Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Auto-Dismiss Timer"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:fontFamily="sans-serif-medium" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Auto dismiss after set time"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchAutoDismiss"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!-- Auto-Dismiss Duration -->
+                <LinearLayout
+                    android:id="@+id/layoutAutoDismissDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duration (seconds):"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginEnd="12dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDuration"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <!-- PIN Protection Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PIN Protection"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"
+                            android:fontFamily="sans-serif-medium" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Require PIN to unlock"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="2dp" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchPinProtection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!-- Set PIN Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSetPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Set PIN"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_white"
+                    android:background="@drawable/bg_button_success"
+                    app:cornerRadius="10dp"
+                    android:visibility="gone"
+                    android:fontFamily="sans-serif-medium" />
+
+            </LinearLayout>
+
+            <!-- Info Card - How It Works -->
+            <LinearLayout
+                android:id="@+id/cardInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center"
+                android:background="@android:color/white"
+                android:layout_marginBottom="16dp">
+
+                <!-- Info Icon -->
+                <TextView
+                    android:id="@+id/tvInfoIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ℹ"
+                    android:textSize="28sp"
+                    android:textColor="@color/primary_blue"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Info Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How It Works"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Info Text -->
+                <TextView
+                    android:id="@+id/tvInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="When activated, this overlay creates a full-screen lock that blocks all system interactions including back button, home button, notifications, and recent apps. Only the internal dismiss button can remove the overlay."
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:lineSpacingMultiplier="1.4"
+                    android:textAlignment="center"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
